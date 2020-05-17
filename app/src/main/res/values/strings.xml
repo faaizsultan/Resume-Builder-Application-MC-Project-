@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">Resume Builder Application</string>
     <string name="name">Name</string>
+    <string name="login">Login</string>
+    <string name="your_login">Your login</string>
+    <string name="pass">Pass</string>
+    <string name="password">Password</string>
+    <string name="happy_cv_making">Happy CV Making!</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="name">Name</string>
+    <string name="age">Age</string>
+    <string name="your_age_in_years">Your Age in Years</string>
+    <string name="_0123_456789">0123-456789</string>
+    <string name="abc_xyz_com">abc@xyz.com</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
 </resources>
