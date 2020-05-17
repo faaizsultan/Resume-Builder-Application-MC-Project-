@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Resume Builder Application</string>
     <string name="name">Name</string>
+    <string name="login">Login</string>
+    <string name="your_login">Your login</string>
+    <string name="pass">Pass</string>
+    <string name="password">Password</string>
 </resources>
