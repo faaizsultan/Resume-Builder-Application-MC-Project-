@@ -1,27 +1,30 @@
 package com.example.resumebuilderapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class signUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Button button = (Button) findViewById(R.id.signUpbtnFromSignIn);
+        setContentView(R.layout.signup);
+
+        Button button = (Button) findViewById(R.id.signInbtnFromSignUp);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, signUp.class);
-                intent.putExtra("Message", "This Message Comes from SIGN IN SCREEN");
+                Intent intent = new Intent(signUp.this, MainActivity.class);
+                intent.putExtra("Message", "This message comes from SIGN UP SCREEN");
                 startActivity(intent);
             }
         });
 
     }
+
 }

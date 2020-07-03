@@ -123,7 +123,8 @@
         app:layout_constraintTop_toBottomOf="@+id/editText5" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/signUpbtn"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="156dp"
@@ -135,7 +136,20 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText6"
+        app:layout_constraintVertical_bias="0.639" />
+
+    <Button
+        android:id="@+id/signInbtnFromSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/buttonborder"
+        android:text="@string/sign_in"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/signUpbtn"
         app:layout_constraintTop_toBottomOf="@+id/editText6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
