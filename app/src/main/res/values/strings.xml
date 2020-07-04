@@ -15,6 +15,16 @@
     <string name="abc_xyz_com">abc@xyz.com</string>
     <string name="sign_up">Sign Up</string>
     <string name="sign_in">Sign In</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="gender">Gender</string>
+    <string name="username">UserName</string>
+
+    <string name="email">Email</string>
+
+
+    <string name="city">City</string>
+    <string name="city_e_g_lahore">City(e.g:Lahore)</string>
 
 
 </resources>
