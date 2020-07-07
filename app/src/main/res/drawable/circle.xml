@@ -1,0 +1,26 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="@android:color/white"/>
+    <stroke
+        android:width="7dp"
+        android:color="@android:color/white"/>
+</shape>
+
+
+
+<!--
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="#A13030"/>
+    <size
+        android:width="350dp"
+        android:height="100dp"
+        android:color="@color/white"/>
+    <gradient
+        android:startColor="#5A4B4B"
+        android:centerColor="#CA2222"
+        android:centerY="0.75"
+        android:endColor="#EBF1EB"
+        android:angle="270"
+        />
+</shape>-->
