@@ -14,7 +14,8 @@ Context context;
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table users (Id INTEGER autoincrement )");
+        db.execSQL("create table users (Id INTEGER Primary key  Autoincrement,firstName TEXT NOT NULL,lastName TEXT NOT NULL,userName TEXT not null,password TEXT not null," +
+                "email TEXT NOT null,gender TEXT NOT NULL,phoneNumber TEXT NOT NULL,city TEXT NOT NULL )");
 
     }
 
