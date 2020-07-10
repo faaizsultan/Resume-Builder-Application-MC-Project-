@@ -20,6 +20,8 @@ public class signUp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
+
+
         DBHelper db=new DBHelper(this);
         Button signInbtn = (Button) findViewById(R.id.signInbtnFromSignUp);
         signInbtn.setOnClickListener(new View.OnClickListener() {
