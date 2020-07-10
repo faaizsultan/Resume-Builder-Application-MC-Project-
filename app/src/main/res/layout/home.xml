@@ -25,62 +25,62 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/createResumeBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="25dp"
         android:background="@android:color/holo_blue_dark"
-        android:text="Create Resume"
+        android:text="@string/create_resume"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/updateResumeBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="25dp"
         android:background="@android:color/holo_blue_dark"
-        android:text="Update Resume"
+        android:text="@string/update_resume"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/createResumeBtn" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/deleteResumeBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="25dp"
         android:background="@android:color/holo_blue_dark"
-        android:text="Delete Resume"
+        android:text="@string/delete_resume"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/updateResumeBtn" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/convertToPdfBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="25dp"
         android:background="@android:color/holo_blue_dark"
-        android:text="Download PDF"
+        android:text="@string/download_pdf"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
+        app:layout_constraintTop_toBottomOf="@+id/deleteResumeBtn" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/updateProfilebtninHomeScreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
         android:background="@android:color/holo_blue_dark"
-        android:text="Update Profile"
+        android:text="@string/update_profile"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
+        app:layout_constraintTop_toBottomOf="@+id/deleteResumeBtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

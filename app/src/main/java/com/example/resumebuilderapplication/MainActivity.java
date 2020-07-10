@@ -6,12 +6,14 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.text.Editable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    String logginInUserName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,33 +32,30 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(signIn())
                 {
-                    Toast.makeText(MainActivity.this, "Sign In Succcessfull", Toast.LENGTH_SHORT).show();
+                    Intent newscreen=new Intent(MainActivity.this,Home.class);
+                    newscreen.putExtra("loggedInUserName",logginInUserName);
+                    startActivity(newscreen);
                 }
                 else
-                    Toast.makeText(MainActivity.this, "OOPS ERRORs", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
             }
         });
     }
     public boolean signIn(){
-        String uname,password;
-        uname = ((Editable)((EditText) findViewById(R.id.login)).getText()).toString().trim();
+        String password;
+        logginInUserName = ((Editable)((EditText) findViewById(R.id.login)).getText()).toString().trim();
         password = ((Editable)((EditText) findViewById(R.id.password)).getText()).toString().trim();
-        if(uname.isEmpty()||password.isEmpty()) {
-            Toast.makeText(this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+        if(logginInUserName.isEmpty()||password.isEmpty()) {
+            Toast.makeText(this, "Not All Fields Filled", Toast.LENGTH_SHORT).show();
             return false;
         }
         else
         {
             DBHelper db=new DBHelper(this);
-            Cursor cursor=db.getReadableDatabase().query("Users",null,"Username=? AND password=?",new String[]{uname,password},null,null,null);
-            if(cursor.moveToFirst()) {
-                Toast.makeText(this,"SuccessFull Login!",Toast.LENGTH_SHORT).show();
+            Cursor cursor=db.getReadableDatabase().query("Users",null,"Username=? AND password=?",new String[]{logginInUserName,password},null,null,null);
+            if(cursor.moveToFirst())
                 return true;
-            }
-            else {
-                Toast.makeText(this, "Not A Registered User", Toast.LENGTH_SHORT).show();
-                return false;
-            }
+            return false;
         }
     }
 }
