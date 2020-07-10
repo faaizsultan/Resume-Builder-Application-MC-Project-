@@ -264,7 +264,7 @@
             app:layout_constraintTop_toBottomOf="@+id/City" />
 
         <Button
-            android:id="@+id/cancelBtn"
+            android:id="@+id/cancelBtnInUpdateScreen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"

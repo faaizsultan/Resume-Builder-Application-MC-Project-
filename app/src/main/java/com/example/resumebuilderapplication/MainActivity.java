@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 if(signIn())
                 {
                     Intent newscreen=new Intent(MainActivity.this,Home.class);
-                    newscreen.putExtra("LoggedInUserName",logginInUserName);
+                    newscreen.putExtra("loggedInUserName",logginInUserName);
                     startActivity(newscreen);
                 }
                 else
