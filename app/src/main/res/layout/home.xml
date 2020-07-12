@@ -25,7 +25,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/createResumeBtn"
+        android:id="@+id/createResumeBtnInHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <Button
-        android:id="@+id/updateResumeBtn"
+        android:id="@+id/updateResumeBtnInHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -46,7 +46,7 @@
         android:text="@string/update_resume"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createResumeBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/createResumeBtnInHome" />
 
     <Button
         android:id="@+id/deleteResumeBtn"
@@ -58,7 +58,7 @@
         android:text="@string/delete_resume"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/updateResumeBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/updateResumeBtnInHome" />
 
     <Button
         android:id="@+id/convertToPdfBtn"
@@ -72,15 +72,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/deleteResumeBtn" />
 
-    <Button
-        android:id="@+id/updateProfilebtninHomeScreen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="24dp"
-        android:background="@android:color/holo_blue_dark"
-        android:text="@string/update_profile"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deleteResumeBtn" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

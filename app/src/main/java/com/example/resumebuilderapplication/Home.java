@@ -19,6 +19,10 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
 
+
+
+
+
         //getting username Coming from sign in Screen..
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -27,16 +31,30 @@ public class Home extends AppCompatActivity {
         ((TextView)findViewById(R.id.textView9)).setText("Welcome "+loggedInUserName);
 
 
-        Button updateProfilebtn = (Button) findViewById(R.id.updateProfilebtninHomeScreen);
-        updateProfilebtn.setOnClickListener(new View.OnClickListener() {
+
+
+
+
+
+
+        Button updateResumebtn = (Button) findViewById(R.id.updateResumeBtnInHome);
+        updateResumebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Home.this, UpdateProfile.class);
-                    i.putExtra("loggedInUserName",loggedInUserName);
-                    startActivity(i);
+                Intent i = new Intent(Home.this, updateResume.class);
+                i.putExtra("loggedInUserName",loggedInUserName);
+                startActivity(i);
             }
         });
-        Button createResume = (Button) findViewById(R.id.createResumeBtn);
+
+
+
+
+
+
+
+
+        Button createResume = (Button) findViewById(R.id.createResumeBtnInHome);
         createResume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,6 +63,12 @@ public class Home extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+
+
+
+
+
 
     }
 }
