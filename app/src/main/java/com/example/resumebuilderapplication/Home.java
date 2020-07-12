@@ -26,7 +26,7 @@ public class Home extends AppCompatActivity {
         }
         ((TextView)findViewById(R.id.textView9)).setText("Welcome "+loggedInUserName);
 
-
+        //Update Profile
         Button updateProfilebtn = (Button) findViewById(R.id.updateProfilebtninHomeScreen);
         updateProfilebtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +34,17 @@ public class Home extends AppCompatActivity {
                 Intent i = new Intent(Home.this, UpdateProfile.class);
                     i.putExtra("loggedInUserName",loggedInUserName);
                     startActivity(i);
+            }
+        });
+
+        //Preview Templates
+        Button previewTemplates = (Button) findViewById(R.id.previewTemplate);
+        previewTemplates.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Home.this, UpdateProfile.class);
+                i.putExtra("loggedInUserName",loggedInUserName);
+                startActivity(i);
             }
         });
 

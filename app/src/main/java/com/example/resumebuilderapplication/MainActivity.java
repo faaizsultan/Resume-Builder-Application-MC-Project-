@@ -8,16 +8,22 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     String logginInUserName;
+
+    public String fileName = "myfile.html";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
         Button signUpbtn = (Button) findViewById(R.id.signUpbtnFromSignIn);
         signUpbtn.setOnClickListener(new View.OnClickListener() {
             @Override

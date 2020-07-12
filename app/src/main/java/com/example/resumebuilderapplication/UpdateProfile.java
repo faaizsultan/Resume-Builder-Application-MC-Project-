@@ -103,7 +103,6 @@ String loggedInUserName,firstName,lastName,Gender;
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(UpdateProfile.this, loggedInUserName, Toast.LENGTH_SHORT).show();
                  Intent i = new Intent(UpdateProfile.this, Home.class);
                 i.putExtra("loggedInUserName",loggedInUserName);
                 startActivity(i);
