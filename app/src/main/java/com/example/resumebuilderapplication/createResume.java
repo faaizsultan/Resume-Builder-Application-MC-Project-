@@ -54,7 +54,7 @@ public class createResume extends AppCompatActivity {
         {
             //creating content values
             ContentValues cv=new ContentValues();
-            cv.put("userNamee",this.loggedInUserName);
+            cv.put("userName",this.loggedInUserName);
             cv.put("college",college);
             cv.put("degreeName",degree);
             cv.put("cgpa",cgpa);
