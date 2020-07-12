@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".signUp">
+    tools:context=".createResume"
+    >
 
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -247,22 +248,16 @@
         app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/createResumeBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="173dp"
         android:background="@android:color/holo_blue_dark"
-        android:text="Create"
+        android:text="Save"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/website" /><![CDATA[
-
-
-
-    />
-
-]]>
+        app:layout_constraintTop_toBottomOf="@+id/website" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

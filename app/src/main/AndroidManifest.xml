@@ -19,6 +19,7 @@
         <activity android:name=".signUp" />
         <activity android:name=".Home"/>
         <activity android:name=".UpdateProfile" />
+        <activity android:name=".createResume" />
 
     </application>
 

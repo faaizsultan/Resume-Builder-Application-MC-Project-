@@ -36,7 +36,23 @@ public class Home extends AppCompatActivity {
                     startActivity(i);
             }
         });
+        //Create Resume Btn
+        Button createResume = (Button) findViewById(R.id.createResumeBtn);
+        createResume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Home.this, createResume.class);
+                i.putExtra("loggedInUserName",loggedInUserName);
+                startActivity(i);
+            }
+        });
+        Button deleteResume = (Button) findViewById(R.id.deleteResumeBtn);
+        createResume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
         //Preview Templates
         Button previewTemplates = (Button) findViewById(R.id.previewTemplate);
         previewTemplates.setOnClickListener(new View.OnClickListener() {
