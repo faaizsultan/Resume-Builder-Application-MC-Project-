@@ -8,12 +8,14 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    String logginInUserName;
+    String loggedInUserName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 if(signIn())
                 {
                     Intent newscreen=new Intent(MainActivity.this,Home.class);
-                    newscreen.putExtra("loggedInUserName",logginInUserName);
+                    newscreen.putExtra("loggedInUserName",loggedInUserName);
                     startActivity(newscreen);
                 }
                 else
@@ -45,16 +47,16 @@ public class MainActivity extends AppCompatActivity {
     }
     public boolean signIn(){
         String password;
-        logginInUserName = ((Editable)((EditText) findViewById(R.id.login)).getText()).toString().trim();
+        loggedInUserName = ((Editable)((EditText) findViewById(R.id.login)).getText()).toString().trim();
         password = ((Editable)((EditText) findViewById(R.id.password)).getText()).toString().trim();
-        if(logginInUserName.isEmpty()||password.isEmpty()) {
+        if(loggedInUserName.isEmpty()||password.isEmpty()) {
             Toast.makeText(this, "Not All Fields Filled", Toast.LENGTH_SHORT).show();
             return false;
         }
         else
         {
             DBHelper db=new DBHelper(this);
-            Cursor cursor=db.getReadableDatabase().query("Users",null,"Username=? AND password=?",new String[]{logginInUserName,password},null,null,null);
+            Cursor cursor=db.getReadableDatabase().query("Users",null,"Username=? AND password=?",new String[]{loggedInUserName,password},null,null,null);
             if(cursor.moveToFirst())
                 return true;
             return false;

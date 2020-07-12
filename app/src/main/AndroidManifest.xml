@@ -20,6 +20,8 @@
         <activity android:name=".Home"/>
         <activity android:name=".UpdateProfile" />
         <activity android:name=".createResume" />
+        <activity android:name=".TemplatePreview" />
+        <activity android:name=".TemplatePlacer" />
         <activity android:name=".updateResume" />
 
     </application>

@@ -33,6 +33,12 @@
 
     <string name="cancel">Cancel</string>
     <string name="update">Update</string>
+    <string name="template_preview">Template Preview</string>
+    <string name="template_1">Template 1</string>
+    <string name="template_2">Template 2</string>
+    <string name="template_3">Template 3</string>
+    <string name="template_4">Template 4</string>
+    <string name="preview_template">Preview Template</string>
 
 
 </resources>
