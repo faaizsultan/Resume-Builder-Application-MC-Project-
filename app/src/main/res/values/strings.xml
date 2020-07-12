@@ -4,7 +4,6 @@
     <string name="login">Login</string>
     <string name="your_login">Your login</string>
     <string name="pass">Pass</string>
-    <string name="password">Password</string>
     <string name="happy_cv_making">Happy CV Making!</string>
 
     <string name="phone">Phone</string>
@@ -39,6 +38,8 @@
     <string name="template_3">Template 3</string>
     <string name="template_4">Template 4</string>
     <string name="preview_template">Preview Template</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Password</string>
 
 
 </resources>

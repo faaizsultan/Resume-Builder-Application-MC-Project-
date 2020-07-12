@@ -38,8 +38,8 @@ public class Home extends AppCompatActivity {
 
 
         Button updateResumebtn = (Button) findViewById(R.id.updateResumeBtnInHome);
+
         updateResumebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
                 Intent i = new Intent(Home.this, updateResume.class);
                 i.putExtra("loggedInUserName",loggedInUserName);
@@ -47,9 +47,8 @@ public class Home extends AppCompatActivity {
             }
         });
         //Create Resume Btn
-        Button createResume = (Button) findViewById(R.id.createResumeBtn);
+        Button createResume = (Button) findViewById(R.id.createResumeBtnInHome);
         createResume.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
                 Intent i = new Intent(Home.this, createResume.class);
                 i.putExtra("loggedInUserName",loggedInUserName);
@@ -66,7 +65,7 @@ public class Home extends AppCompatActivity {
         //Preview Templates
         Button previewTemplates = (Button) findViewById(R.id.previewTemplate);
         previewTemplates.setOnClickListener(new View.OnClickListener() {
-            @Override
+
             public void onClick(View v) {
                 Intent i = new Intent(Home.this, TemplatePreview.class);
                 i.putExtra("loggedInUserName",loggedInUserName);

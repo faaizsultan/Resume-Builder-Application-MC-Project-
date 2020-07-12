@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_red_dark"
+    android:background="#d3d3d3"
     >
 
     <TextView
-        android:background="@android:color/holo_blue_dark"
+        android:background="#d3d3d3"
         android:id="@+id/textView9"
         android:layout_width="match_parent"
         android:layout_height="30dp"
@@ -17,7 +17,7 @@
         android:text="Home"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@android:color/background_dark"
+        android:textColor="@color/cardview_dark_background"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -30,8 +30,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="25dp"
-        android:background="@android:color/holo_blue_dark"
+        android:background="#d3d3d3"
         android:text="Create Resume"
+        android:textColor="@color/cardview_dark_background"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
@@ -42,9 +43,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="25dp"
-        android:background="@android:color/holo_blue_dark"
+        android:background="#d3d3d3"
         android:text="@string/update_resume"
         android:textSize="18sp"
+        android:textColor="@color/cardview_dark_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/createResumeBtnInHome" />
 
@@ -54,9 +56,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="25dp"
-        android:background="@android:color/holo_blue_dark"
+        android:background="#d3d3d3"
         android:text="@string/delete_resume"
         android:textSize="18sp"
+        android:textColor="@color/cardview_dark_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/updateResumeBtnInHome" />
 
@@ -66,9 +69,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="25dp"
-        android:background="@android:color/holo_blue_dark"
+        android:background="#d3d3d3"
         android:text="@string/download_pdf"
         android:textSize="18sp"
+        android:textColor="@color/cardview_dark_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/deleteResumeBtn" />
 
@@ -79,9 +83,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="25dp"
-        android:background="@android:color/holo_blue_dark"
+        android:background="#d3d3d3"
         android:text="@string/preview_template"
         android:textSize="18sp"
+        android:textColor="@color/cardview_dark_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/convertToPdfBtn" />
 
@@ -93,9 +98,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
-        android:background="@android:color/holo_blue_dark"
+        android:background="#d3d3d3"
         android:text="@string/update_profile"
         android:textSize="18sp"
+        android:textColor="@color/cardview_dark_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/previewTemplate" />
 </androidx.constraintlayout.widget.ConstraintLayout>
