@@ -22,7 +22,7 @@ public class signUp extends AppCompatActivity {
         setContentView(R.layout.signup);
 
 
-        DBHelper db=new DBHelper(this);
+        //DBHelper db=new DBHelper(this);
         Button signInbtn = (Button) findViewById(R.id.signInbtnFromSignUp);
         signInbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +42,8 @@ public class signUp extends AppCompatActivity {
         });
     }
     public void registerUser(){
+
+        //getting all data from text fields
         String fname,lname,uname,password,email,gender,phone,city;
         fname = ((Editable)((EditText) findViewById(R.id.firstName)).getText()).toString().trim();
         lname = ((Editable)((EditText) findViewById(R.id.lastName)).getText()).toString().trim();
@@ -57,17 +59,23 @@ public class signUp extends AppCompatActivity {
             gender="Male";
         else
            gender="Female";
+
+
+        //check if data is empty
         if(fname.isEmpty()||lname.isEmpty()||uname.isEmpty()||password.isEmpty()||email.isEmpty()||phone.isEmpty()||city.isEmpty())
         {
             Toast.makeText(this,"Please Fill Out the Missing Data",Toast.LENGTH_SHORT).show();
         }
         else {
+
+            //getting cursor
            Cursor cursor=db.getReadableDatabase().query("Users",null,"Username=?",new String[]{uname},null,null,null);
             if(cursor.moveToFirst()) {
                 Toast.makeText(this, "User Already Exists", Toast.LENGTH_SHORT).show();
             }
             else
             {
+                //creating contentent values
                 ContentValues cv=new ContentValues();
                 cv.put("firstName",fname);
                 cv.put("lastName",lname);
@@ -77,6 +85,8 @@ public class signUp extends AppCompatActivity {
                 cv.put("gender",gender);
                 cv.put("phoneNumber",phone);
                 cv.put("city",city);
+
+                //inserting data
                 long rows=db.getWritableDatabase().insert("Users",null,cv);
                 Toast.makeText(this, "SuccessFull SignUP!"+rows, Toast.LENGTH_SHORT).show();
             }

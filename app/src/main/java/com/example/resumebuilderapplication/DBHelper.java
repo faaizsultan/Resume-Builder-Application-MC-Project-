@@ -16,7 +16,7 @@ Context context;
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table users (Id INTEGER Primary key  Autoincrement,firstName TEXT NOT NULL,lastName TEXT NOT NULL,userName TEXT not null,password TEXT not null," +
                 "email TEXT NOT null,gender TEXT NOT NULL,phoneNumber TEXT NOT NULL,city TEXT NOT NULL )");
-        db.execSQL("create table resumes (college TEXT NOT NULL,degreeName TEXT NOT NULL,cgpa INTEGER NOT NULL,objective TEXT NOT NULL,experience TEXT NOT NULL,skills TEXT NOT NULL,"+
+        db.execSQL("create table resumes (userName TEXT Primary key,college TEXT NOT NULL,degreeName TEXT NOT NULL,cgpa INTEGER NOT NULL,objective TEXT NOT NULL,experience TEXT NOT NULL,skills TEXT NOT NULL,"+
                 "website TEXT NOT NULL)");
     }
 
