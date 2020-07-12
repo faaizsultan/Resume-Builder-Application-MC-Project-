@@ -24,7 +24,7 @@
         android:layout_marginTop="32dp"
         android:background="@android:color/holo_blue_dark"
         android:fontFamily="monospace"
-        android:text="Create Resume"
+        android:text="Edit Resume"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@android:color/background_dark"
