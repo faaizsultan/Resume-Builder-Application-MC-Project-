@@ -21,35 +21,6 @@ public class createResume extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.resume);
-
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            loggedInUserName = extras.getString("loggedInUserName");
-            DBHelper db = new DBHelper(this);
-            Cursor cursor = db.getReadableDatabase().query("resumes", null, "userName=?", new String[]{loggedInUserName}, null, null, null);
-            //AutoFilling Data
-            if (cursor.moveToFirst()) {
-                String college, degree, cgpa, objective, experience,skills,website;
-                //getting Data from databae
-                college = cursor.getString(cursor.getColumnIndex("college"));
-                degree = cursor.getString(cursor.getColumnIndex("degree"));
-                cgpa = cursor.getString(cursor.getColumnIndex("cgpa"));
-                objective = cursor.getString(cursor.getColumnIndex("objective"));
-                experience = cursor.getString(cursor.getColumnIndex("experience"));
-                skills = cursor.getString(cursor.getColumnIndex("skills"));
-                website = cursor.getString(cursor.getColumnIndex("website"));
-                //AutoFilling the fields...
-                ((EditText) findViewById(R.id.college)).setText(college);
-                ((EditText) findViewById(R.id.degree)).setText(degree);
-                ((EditText) findViewById(R.id.cgpa)).setText(cgpa);
-                ((EditText) findViewById(R.id.obj)).setText(objective);
-                ((EditText) findViewById(R.id.experience)).setText(experience);
-                ((EditText) findViewById(R.id.skills)).setText(skills);
-                ((EditText) findViewById(R.id.website)).setText(website);
-
-            }
-        }
-
         Button createBtn= (Button) findViewById(R.id.createResumeBtn);
         createBtn.setOnClickListener(new View.OnClickListener() {
             @Override
