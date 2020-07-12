@@ -1,15 +1,28 @@
 package com.example.resumebuilderapplication;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.os.Environment;
+import android.print.PrintAttributes;
+import android.print.PrintDocumentAdapter;
+import android.print.PrintManager;
+import android.view.View;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.Toast;
+import android.widget.Toolbar;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.File;
+
 public class TemplatePlacer extends AppCompatActivity {
 
-WebView webView;
+WebView myWebView;
     String templateToShow,loggedInUserName,templateNo;
     String firstName,lname,email,phoneNumber,skills,objective,experience,CGPA,college,degreeName,website;
     Integer cgpa;
@@ -17,6 +30,24 @@ WebView webView;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.templateplacer);
+        myWebView = (WebView) findViewById(R.id.myWebView);
+
+
+
+        myWebView.setWebViewClient(new WebViewClient() {
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                return false;
+            }
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+
+                //if page loaded successfully then show print button
+                findViewById(R.id.convertToPdfBtninToolbar).setVisibility(View.VISIBLE);
+            }
+        });
+        
+
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -78,7 +109,7 @@ WebView webView;
                         "\n" +
                         "    <div id=\"page-wrap\">\n" +
                         "    \n" +
-                        "        <img src=\"file:///android_asset/template1/images/cthulu.png\" alt=\"Photo of Cthulu\" id=\"pic\" />\n" +
+
                         "    \n" +
                         "        <div id=\"contact-info\" class=\"vcard\">\n" +
                         "        \n" +
@@ -170,7 +201,7 @@ WebView webView;
                         "\n" +
                         "\t\t\t\t<div class=\"yui-u\">\n" +
                         "\t\t\t\t\t<div class=\"contact-info\">\n" +
-                        "\t\t\t\t\t\t<h3><a id=\"pdf\" href=\"#\">Download PDF</a></h3>\n" +
+
                         "\t\t\t\t\t\t<h3><a href=\"mailto:"+email+"\">"+email+"</a></h3>\n" +
                         "\t\t\t\t\t\t<h3>"+phoneNumber+"</h3>\n" +
                         "\t\t\t\t\t</div><!--// .contact-info -->\n" +
@@ -272,12 +303,12 @@ WebView webView;
         "<div id=\"cv\" class=\"instaFade\">\n" +
         "\t<div class=\"mainDetails\">\n" +
         "\t\t<div id=\"headshot\" class=\"quickFade\">\n" +
-        "\t\t\t<img src=\"file:///android_asset/template3/headshot.jpg\" alt=\"Alan Smith\" />\n" +
+
         "\t\t</div>\n" +
         "\t\t\n" +
         "\t\t<div id=\"name\">\n" +
         "\t\t\t<h1 class=\"quickFade delayTwo\">"+firstName+" "+lname+"</h1>\n" +
-        "\t\t\t<h2 class=\"quickFade delayThree\">JOB TITLE DAL LENA</h2>\n" +
+
         "\t\t</div>\n" +
         "\t\t\n" +
         "\t\t<div id=\"contactDetails\" class=\"quickFade delayFour\">\n" +
@@ -391,10 +422,35 @@ WebView webView;
         {
             Toast.makeText(TemplatePlacer.this,"Some Error While fetching database",Toast.LENGTH_LONG).show();
         }
-        webView = (WebView) findViewById(R.id.webView);
-        // displaying text in WebView
+        myWebView.loadDataWithBaseURL(null, templateToShow, "text/html", "utf-8", null);
+        Button convertToPdf= (Button) findViewById(R.id.convertToPdfBtninToolbar);
+        convertToPdf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                printPDF(myWebView);
+            }
+        });
 
-        webView.loadDataWithBaseURL(null, templateToShow, "text/html", "utf-8", null);
+    }
+
+    private void createWebPrintJob(WebView webView) {
+
+        //create object of print manager in your device
+        PrintManager printManager = (PrintManager) this.getSystemService(Context.PRINT_SERVICE);
+
+        //create object of print adapter
+        PrintDocumentAdapter printAdapter = webView.createPrintDocumentAdapter();
+
+        //Setting Name to new File
+        String jobName = getString(R.string.app_name) + firstName+" "+templateNo;
+        //Print Dialog Openeing
+        printManager.print(jobName, printAdapter, new PrintAttributes.Builder().build());
+    }
+
+    //perform click pdf creation operation on click of print button click
+    public void printPDF(View view) {
+        createWebPrintJob(myWebView);
     }
 }
+
 
