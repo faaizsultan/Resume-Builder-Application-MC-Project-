@@ -67,7 +67,7 @@ public class createResume extends AppCompatActivity {
 
             //inserting data
             long rows=db.getWritableDatabase().insert("resumes",null,cv);
-            Toast.makeText(this, "SuccessFully Saved!"+rows, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "SuccessFully Saved!", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(createResume.this, Home.class);
             //i.putExtra("loggedInUserName",loggedInUserName);
             startActivity(i);
