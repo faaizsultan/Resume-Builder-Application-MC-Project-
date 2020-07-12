@@ -420,7 +420,7 @@ WebView myWebView;
         }
         else
         {
-            Toast.makeText(TemplatePlacer.this,"Some Error While fetching database",Toast.LENGTH_LONG).show();
+            Toast.makeText(TemplatePlacer.this,"No Records Found for Your CV",Toast.LENGTH_LONG).show();
         }
         myWebView.loadDataWithBaseURL(null, templateToShow, "text/html", "utf-8", null);
         Button convertToPdf= (Button) findViewById(R.id.convertToPdfBtninToolbar);

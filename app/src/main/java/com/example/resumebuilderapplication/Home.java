@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -55,6 +56,17 @@ public class Home extends AppCompatActivity {
                 Intent i = new Intent(Home.this, TemplatePreview.class);
                 i.putExtra("loggedInUserName",loggedInUserName);
                 startActivity(i);
+            }
+        });
+        //Delete Resume Butn
+        Button deleteResume = (Button) findViewById(R.id.deleteResumeBtn);
+        deleteResume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DBHelper db=new DBHelper(Home.this);
+               int rows= db.getWritableDatabase().delete("resumes","userName=?",new String[]{loggedInUserName});
+                if(rows==1)
+                    Toast.makeText(Home.this,"Resume Records Deleted Succesfull",Toast.LENGTH_LONG).show();
             }
         });
 
