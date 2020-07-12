@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -72,6 +73,33 @@ public class Home extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        //Delete Resume Butn
+        Button deleteResume = (Button) findViewById(R.id.deleteResumeBtn);
+        deleteResume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DBHelper db=new DBHelper(Home.this);
+               int rows= db.getWritableDatabase().delete("resumes","userName=?",new String[]{loggedInUserName});
+                if(rows==1)
+                    Toast.makeText(Home.this,"Resume Records Deleted Succesfull",Toast.LENGTH_LONG).show();
+            }
+        });
 
+        //Update Resume
+        Button updateResume = (Button) findViewById(R.id.updateResumeBtn);
+        updateResume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DBHelper db=new DBHelper(Home.this);
+                Cursor cursor= db.getReadableDatabase().query("resumes",null,"userName=?",new String[]{loggedInUserName},null,null,null);
+                if(!cursor.moveToFirst())
+                    Toast.makeText(Home.this,"No Resume To Update!Create First",Toast.LENGTH_LONG).show();
+                else{
+                    Intent i = new Intent(Home.this, UpdateResume.class);
+                    i.putExtra("loggedInUserName",loggedInUserName);
+                    startActivity(i);
+                }
+            }
+        });
     }
 }
