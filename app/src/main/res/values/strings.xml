@@ -28,7 +28,7 @@
     <string name="create_resume">Create Resume</string>
     <string name="update_resume">Update Resume</string>
     <string name="delete_resume">Delete Resume</string>
-    <string name="download_pdf">Download PDF</string>
+
     <string name="update_profile">Update Profile</string>
 
     <string name="cancel">Cancel</string>
@@ -38,6 +38,7 @@
     <string name="template_3">Template 3</string>
     <string name="template_4">Template 4</string>
     <string name="preview_template">Preview Template</string>
+    <string name="download_pdf">Download PDF</string>
 
 
 </resources>
