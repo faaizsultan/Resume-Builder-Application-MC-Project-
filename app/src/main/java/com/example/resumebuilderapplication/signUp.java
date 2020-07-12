@@ -88,7 +88,7 @@ public class signUp extends AppCompatActivity {
 
                 //inserting data
                 long rows=db.getWritableDatabase().insert("Users",null,cv);
-                Toast.makeText(this, "SuccessFull SignUP!"+rows, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "SuccessFull SignUp!", Toast.LENGTH_SHORT).show();
             }
         }
     }

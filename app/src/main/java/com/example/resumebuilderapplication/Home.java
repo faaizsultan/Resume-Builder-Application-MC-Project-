@@ -46,19 +46,13 @@ public class Home extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        Button deleteResume = (Button) findViewById(R.id.deleteResumeBtn);
-        createResume.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
         //Preview Templates
         Button previewTemplates = (Button) findViewById(R.id.previewTemplate);
         previewTemplates.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Home.this, UpdateProfile.class);
+                Intent i = new Intent(Home.this, TemplatePreview.class);
                 i.putExtra("loggedInUserName",loggedInUserName);
                 startActivity(i);
             }
