@@ -45,12 +45,6 @@ public class Home extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        Button deleteResume = (Button) findViewById(R.id.deleteResumeBtn);
-        createResume.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
     }
 }
