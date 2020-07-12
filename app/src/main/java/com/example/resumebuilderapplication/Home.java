@@ -70,5 +70,21 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        //Update Resume
+        Button updateResume = (Button) findViewById(R.id.updateResumeBtn);
+        updateResume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DBHelper db=new DBHelper(Home.this);
+                Cursor cursor= db.getReadableDatabase().query("resumes",null,"userName=?",new String[]{loggedInUserName},null,null,null);
+                if(!cursor.moveToFirst())
+                    Toast.makeText(Home.this,"No Resume To Update!Create First",Toast.LENGTH_LONG).show();
+                else{
+                    Intent i = new Intent(Home.this, UpdateResume.class);
+                    i.putExtra("loggedInUserName",loggedInUserName);
+                    startActivity(i);
+                }
+            }
+        });
     }
 }
