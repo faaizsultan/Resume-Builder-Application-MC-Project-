@@ -22,7 +22,7 @@
         <activity android:name=".createResume" />
         <activity android:name=".TemplatePreview" />
         <activity android:name=".TemplatePlacer" />
-        <activity android:name=".updateResume" />
+        <activity android:name=".UpdateResume" />
 
     </application>
 
